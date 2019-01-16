@@ -26,7 +26,7 @@ class Board:
         self.height = cell_size * self.rows
 
         self.canvas = Canvas(master, width=self.width, height=self.height) #, fill='red')
-        self.canvas.pack(side=LEFT)
+        self.canvas.grid(row=0, column=2, rowspan=20)
 
 
     def draw_board(self, snake_pos, apple_pos):
@@ -85,6 +85,7 @@ class Snake:
                     (4 * cell_size, 10 * cell_size)] #TODO: center initial snake position
         self.length = 3
         self.forward = 'right'  # keep track of a forward direction
+        self.dead = False
 
     def move(self, new_head, consume):
         '''Adds a new (head) block in the direction of motion
