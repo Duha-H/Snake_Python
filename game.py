@@ -5,6 +5,7 @@
 from tkinter import *
 from tkinter import messagebox
 from components import *
+from board import *
 import time
 
 class Game:
