@@ -79,7 +79,7 @@ class Game:
         
         if new_block == self.apple.pos:  # consume apple
             self.snake.move(new_block, True)
-            self.apple.new_apple()
+            self.apple.new_apple(self.snake.pos)
             self.update_score()
         elif new_block in self.snake.pos and new_block != self.snake.pos[1]:    # invalid move; snake wrapping around itself
             self.death_message()

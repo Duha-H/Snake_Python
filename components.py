@@ -38,7 +38,11 @@ class Apple:
            position changes when apple is "consumed"'''
         self.pos = (5*cell_size, 5*cell_size) #TODO: center initial apple position
 
-    def new_apple(self):
+    def new_apple(self, snake_pos):
         new_x = random.randint(0, cols-1)
         new_y = random.randint(0, rows-1)
-        self.pos = (new_x * cell_size, new_y * cell_size)
+        new_pos = (new_x * cell_size, new_y * cell_size)
+        if new_pos not in snake_pos:    # set new random position if chosen block is not occupied by snake
+            self.pos = (new_x * cell_size, new_y * cell_size)
+        else:
+            self.new_apple(snake_pos)
