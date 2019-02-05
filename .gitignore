@@ -1,2 +1,6 @@
 # Keep these files untracked
 structure.txt
+
+# ignore generated pycache
+**/__pycache__
+**/images
